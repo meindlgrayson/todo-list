@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <form method="post" action="/">
+        <input type="text" name="todo" placeholder="Add list item" />
+        <button type="submit">Add</button>
+    </form>
+    <h2>Tasks</h2>
+    {{#incomplete}}
+    <form method="post" action="/{{id}}">
+        <button type="submit" name="mark">mark complete</button>
+        <p>{{msg}}</p>
+    </form>
+    {{/incomplete}}
+ 
+
+    <h2>Completed Tasks</h2>
+    {{#completed}}
+    <p>{{msg}}</p>
+    {{/completed}}
+</body>
+
+</html>
